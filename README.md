@@ -1,6 +1,6 @@
 # jstransformer-browserify
 
-Browserify support for JSTransformers.
+[Browserify](http://browserify.org/) support for [JSTransformers](https://github.com/jstransformers/jstransformer).
 
 [![Build Status](https://img.shields.io/travis/jstransformers/jstransformer-browserify/master.svg)](https://travis-ci.org/jstransformers/jstransformer-browserify)
 [![Coverage Status](https://img.shields.io/coveralls/jstransformers/jstransformer-browserify/master.svg)](https://coveralls.io/r/jstransformers/jstransformer-browserify?branch=master)
