@@ -22,7 +22,7 @@ test('should build input.txt correctly', function (done) {
     done();
   }, function (err) {
     done(err);
-  });
+  }).done();
 });
 
 test('should fail cleanly when file not found', function (done) {
