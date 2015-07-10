@@ -1,6 +1,7 @@
 'use strict';
 
 var browserify = require('browserify');
+var browserifyString = require('browserify-string');
 var Promise = require('promise');
 
 exports.name = 'browserify';
@@ -19,4 +20,16 @@ exports.renderFileAsync = function (filename, options, locals) {
       }
     });
   });
+};
+
+exports.renderAsync = function (str, options, locals) {
+  return new Promise(function (resolve, reject) {
+    browserifyString(str, options).bundle(function (err, src) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(src.toString());
+      }
+    })
+  })
 };

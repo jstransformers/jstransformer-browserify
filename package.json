@@ -22,7 +22,8 @@
   "author": "Rob Loach <robloach@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "browserify": "^10.2.1",
+    "browserify": "^10.2.6",
+    "browserify-string": "^1.1.1",
     "promise": "^7.0.0"
   }
 }
