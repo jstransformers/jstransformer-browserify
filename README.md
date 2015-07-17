@@ -24,7 +24,7 @@ browserify.renderFileAsync('./app.js', function (err, data) {
 
 ## Notes
 
-In order to use `.render()`, or `.renderAsync()`, you will need to additionally install [`browserify-string`](https://github.com/eugeneware/browserify-string).
+In order to use `.renderAsync()`, you will need to additionally install [`browserify-string`](https://github.com/eugeneware/browserify-string).
 
     npm install browserify-string --save
 
