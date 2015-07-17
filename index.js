@@ -20,3 +20,16 @@ exports.renderFileAsync = function (filename, options, locals) {
     });
   });
 };
+
+exports.renderAsync = function (str, options, locals) {
+  return new Promise(function (resolve, reject) {
+    var browserifyString = require('browserify-string');
+    browserifyString(str, options).bundle(function (err, src) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(src.toString());
+      }
+    })
+  })
+};
