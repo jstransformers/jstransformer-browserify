@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.0: 2015-07-16
+
+- Added `.render()` support through [`browserify-string`](https://github.com/eugeneware/browserify-string)
+
 ## v0.0.3: 2015-06-08
 
 - Updated Boilerplate
