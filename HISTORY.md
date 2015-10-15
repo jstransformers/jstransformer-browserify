@@ -1,5 +1,9 @@
 # Changelog
 
+## vx.x.x
+
+- Improved `.renderAsync()` to use [`stream.Readable`](https://nodejs.org/api/stream.html#stream_class_stream_readable) rather than [`browserify-string`](https://www.npmjs.com/package/browserify-string)
+
 ## v0.2.0: 2015-09-10
 
 - Updated dependencies
