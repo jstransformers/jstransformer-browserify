@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.0: 2015-10-26
+
+- Updated to `browserify@^12.0.0`
+
 ## v0.2.0: 2015-10-15
 
 - Updated dependencies
