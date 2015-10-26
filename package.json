@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "browserify": "^11.0.1",
+    "browserify": "^12.0.0",
     "extend-shallow": "^2.0.1",
     "promise": "^7.0.4"
   },
