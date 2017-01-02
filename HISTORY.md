@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.5.0: 2017-01-02
+
+- Remove dependency on `promise`
+
 ## v0.4.0: 2015-10-26
 
 - Updated to `browserify@^13.0.0`

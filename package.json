@@ -1,8 +1,7 @@
 {
   "dependencies": {
     "browserify": "^13.0.0",
-    "extend-shallow": "^2.0.1",
-    "promise": "^7.0.4"
+    "extend-shallow": "^2.0.1"
   },
   "name": "jstransformer-browserify",
   "version": "0.4.0",

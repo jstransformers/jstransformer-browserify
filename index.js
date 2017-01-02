@@ -3,7 +3,6 @@
 var path = require('path')
 var Readable = require('stream').Readable
 var browserify = require('browserify')
-var Promise = require('promise')
 var extend = require('extend-shallow')
 
 exports.name = 'browserify'
