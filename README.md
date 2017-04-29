@@ -1,5 +1,7 @@
 # jstransformer-browserify
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jstransformers/jstransformer-browserify.svg)](https://greenkeeper.io/)
+
 [Browserify](http://browserify.org/) support for [JSTransformers](https://github.com/jstransformers/jstransformer).
 
 [![Build Status](https://img.shields.io/travis/jstransformers/jstransformer-browserify/master.svg)](https://travis-ci.org/jstransformers/jstransformer-browserify)
