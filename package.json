@@ -1,10 +1,10 @@
 {
   "dependencies": {
     "browserify": "^14.0.0",
-    "extend-shallow": "^2.0.1"
+    "extend-shallow": "^3.0.1"
   },
   "name": "jstransformer-browserify",
-  "version": "0.4.0",
+  "version": "0.6.0",
   "description": "Browserify support for JSTransformers.",
   "keywords": [
     "jstransformer"

@@ -48,4 +48,3 @@ exports.renderAsync = function (str, options, locals) {
     })
   })
 }
-

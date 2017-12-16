@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.6.0: 2017-12-16
+
+- Update to `extend-shallow@^3.0.1`
+
 ## v0.5.0: 2017-01-02
 
 - Remove dependency on `promise`
