@@ -19,7 +19,7 @@
   "scripts": {
     "coverage": "test-jstransformer coverage",
     "test": "test-jstransformer",
-    "posttest": "xo --space --no-semicolon index.js"
+    "posttest": "xo --space --no-semicolon index.js lib/**"
   },
   "engines": {
     "node": ">=4"

@@ -1,5 +1,6 @@
 'use strict'
 
+const cp = require('child_process')
 const path = require('path')
 const stream = require('stream')
 const browserify = require('browserify')
@@ -7,8 +8,19 @@ const extend = require('extend-shallow')
 
 const Readable = stream.Readable
 
+const browserifyPath = path.resolve(__dirname, 'lib', 'browserify.js')
+
 exports.name = 'browserify'
 exports.outputFormat = 'js'
+
+exports.renderFile = function (filename, options, locals) {
+  // Spawn a browserify process synchronously
+  const output = cp.execSync(
+    `node ${browserifyPath} file ${stringifyForCli(filename)} ${stringifyForCli(options)} ${stringifyForCli(locals)}`
+  )
+
+  return output.toString()
+}
 
 exports.renderFileAsync = function (filename, options, locals) {
   return new Promise((resolve, reject) => {
@@ -22,6 +34,21 @@ exports.renderFileAsync = function (filename, options, locals) {
       }
     })
   })
+}
+
+exports.render = function (str, options, locals) {
+// Inject the basedir from the filename, if available.
+  options = extend({}, options, locals)
+  if ({}.hasOwnProperty.call(options, 'filename') && !{}.hasOwnProperty.call(options, 'basedir')) {
+    options.basedir = path.dirname(options.filename)
+  }
+
+  // Spawn a browserify process synchronously
+  const output = cp.execSync(
+    `node ${browserifyPath} text ${stringifyForCli(str)} ${stringifyForCli(options)}`
+  )
+
+  return output.toString()
 }
 
 exports.renderAsync = function (str, options, locals) {
@@ -47,4 +74,8 @@ exports.renderAsync = function (str, options, locals) {
       }
     })
   })
+}
+
+function stringifyForCli(object) {
+  return JSON.stringify(JSON.stringify(object || {}))
 }
