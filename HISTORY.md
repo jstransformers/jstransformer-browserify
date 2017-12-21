@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.7.0: 2017-12-21
+
+- Add `renderFile()` and `render()`
+  - By [droooney](https://github.com/droooney)
+
 ## v0.6.0: 2017-12-16
 
 - Update to `extend-shallow@^3.0.1`
