@@ -13,15 +13,6 @@ const browserifyPath = path.resolve(__dirname, 'lib', 'browserify.js')
 exports.name = 'browserify'
 exports.outputFormat = 'js'
 
-exports.renderFile = function (filename, options, locals) {
-  // Spawn a browserify process synchronously
-  const output = cp.execSync(
-    `node ${browserifyPath} file ${stringifyForCli(filename)} ${stringifyForCli(options)} ${stringifyForCli(locals)}`
-  )
-
-  return output.toString()
-}
-
 exports.renderFileAsync = function (filename, options, locals) {
   return new Promise((resolve, reject) => {
     const b = browserify(options || {})

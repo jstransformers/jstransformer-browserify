@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "browserify": "^14.0.0",
+    "browserify": "^16.1.0",
     "extend-shallow": "^3.0.1"
   },
   "name": "jstransformer-browserify",
@@ -18,7 +18,7 @@
   },
   "scripts": {
     "coverage": "test-jstransformer coverage",
-    "test": "test-jstransformer || true",
+    "test": "test-jstransformer",
     "posttest": "xo --space=2 --no-semicolon index.js"
   },
   "engines": {
