@@ -6,8 +6,7 @@ const stream = require('stream')
 const browserify = require('browserify')
 const extend = require('extend-shallow')
 
-const Readable = stream.Readable
-
+const {Readable} = stream
 const browserifyPath = path.resolve(__dirname, 'lib', 'browserify.js')
 
 exports.name = 'browserify'
