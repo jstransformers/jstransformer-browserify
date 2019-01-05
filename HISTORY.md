@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.7.2: 2019-01-05
+
+- Fix missing jstransformer-browserify/lib/browserify.js in npm
+  - By [jcoffland](https://github.com/jcoffland) in [#30](https://github.com/jstransformers/jstransformer-browserify/pull/30)
+
 ## v0.7.0: 2017-12-21
 
 - Add `renderFile()` and `render()`
