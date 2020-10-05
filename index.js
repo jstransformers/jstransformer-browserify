@@ -34,11 +34,11 @@ exports.render = function (str, options, locals) {
   }
 
   // Spawn a browserify process synchronously
-  const output = cp.execSync(
-    `node ${browserifyPath} text ${stringifyForCli(str)} ${stringifyForCli(options)}`
+  const o = cp.spawnSync(
+    'node', [browserifyPath, 'text', stringifyForCli(str), stringifyForCli(options)]
   )
 
-  return output.toString()
+  return o.output.toString()
 }
 
 exports.renderAsync = function (str, options, locals) {
