@@ -5,8 +5,7 @@ const path = require('path')
 const stream = require('stream')
 const browserify = require('browserify')
 const extend = require('extend-shallow')
-
-const {Readable} = stream
+const Readable = stream.Readable
 const browserifyPath = path.resolve(__dirname, 'lib', 'browserify.js')
 
 exports.name = 'browserify'
@@ -26,7 +25,7 @@ exports.renderFileAsync = function (filename, options, locals) {
   })
 }
 
-exports.render = function (str, options, locals) {
+exports.render = function (input, options, locals) {
 // Inject the basedir from the filename, if available.
   options = extend({}, options, locals)
   if ({}.hasOwnProperty.call(options, 'filename') && !{}.hasOwnProperty.call(options, 'basedir')) {
@@ -35,13 +34,17 @@ exports.render = function (str, options, locals) {
 
   // Spawn a browserify process synchronously
   const o = cp.spawnSync(
-    'node', [browserifyPath, 'text', stringifyForCli(str), stringifyForCli(options)]
+    'node', [browserifyPath, 'text', stringifyForCli(input), stringifyForCli(options)]
   )
 
-  return o.output.toString()
+  if (o.stderr.toString()) {
+    throw new Error(o.stderr)
+  }
+
+  return o.stdout.toString()
 }
 
-exports.renderAsync = function (str, options, locals) {
+exports.renderAsync = function (input, options, locals) {
   return new Promise((resolve, reject) => {
     // Inject the basedir from the filename, if available.
     options = extend({}, options, locals)
@@ -51,7 +54,7 @@ exports.renderAsync = function (str, options, locals) {
 
     // Create a stream from the input string.
     const streamreadable = new Readable()
-    streamreadable.push(str)
+    streamreadable.push(input)
     streamreadable.push(null) // Indicate the end of the stream.
 
     // Create the Browserify object.
@@ -67,5 +70,5 @@ exports.renderAsync = function (str, options, locals) {
 }
 
 function stringifyForCli(object) {
-  return JSON.stringify(JSON.stringify(object || {}))
+  return JSON.stringify(object || {})
 }
