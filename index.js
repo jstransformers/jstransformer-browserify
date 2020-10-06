@@ -38,7 +38,7 @@ exports.render = function (str, options, locals) {
     'node', [browserifyPath, 'text', stringifyForCli(str), stringifyForCli(options)]
   )
 
-  return o.output.toString()
+  return o.stdout.toString()
 }
 
 exports.renderAsync = function (str, options, locals) {
@@ -67,5 +67,5 @@ exports.renderAsync = function (str, options, locals) {
 }
 
 function stringifyForCli(object) {
-  return JSON.stringify(JSON.stringify(object || {}))
+  return JSON.stringify(object || {})
 }
