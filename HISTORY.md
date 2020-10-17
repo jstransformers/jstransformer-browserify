@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0: 2020-10-17
+
+- Fix synchronous rendering API call
+  - By [jcoffland](https://github.com/jcoffland) in [#37](https://github.com/jstransformers/jstransformer-browserify/pull/37)
+- Update to `browserify@17.0.0`
+
 ## v0.7.2: 2019-01-05
 
 - Fix missing jstransformer-browserify/lib/browserify.js in npm

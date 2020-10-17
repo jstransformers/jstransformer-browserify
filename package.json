@@ -4,7 +4,7 @@
     "extend-shallow": "^3.0.2"
   },
   "name": "jstransformer-browserify",
-  "version": "0.7.2",
+  "version": "1.0.0",
   "description": "Browserify support for JSTransformers.",
   "keywords": [
     "jstransformer"
