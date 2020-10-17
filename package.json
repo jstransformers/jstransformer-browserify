@@ -14,7 +14,7 @@
     "lib/browserify.js"
   ],
   "devDependencies": {
-    "test-jstransformer": "^1.0.0",
+    "test-jstransformer": "*",
     "xo": "*"
   },
   "scripts": {
